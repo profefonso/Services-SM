@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import include, re_path
+from django.urls import include
 
-from multapp.views import soap, infraction_management_soap
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('multapp.urls')),
-    re_path(r'^soap/', soap.consulta()),
-    re_path(r'^infraction_management/', infraction_management_soap.infraction_management()),
 ]
