@@ -5,9 +5,8 @@ from rest_framework_swagger.views import get_swagger_view
 
 from multapp.views import municipality
 from multapp.views import infraction
-from multapp.views import notification
 
-schema_view = get_swagger_view(title='SIMIT WEB API')
+schema_view = get_swagger_view(title='SIMIT WEB API TRANSACTIONAL')
 
 
 urlpatterns = [
@@ -40,11 +39,5 @@ urlpatterns = [
         '^infraction/(?P<pk>[0-9]+)/$',
         infraction.InfractionDetail.as_view(),
         name=infraction.InfractionDetail.name
-    ),
-    # notification
-    path(
-        'notification/',
-        notification.NotificationServicesRest.as_view(),
-        name=notification.NotificationServicesRest.name
     ),
 ]

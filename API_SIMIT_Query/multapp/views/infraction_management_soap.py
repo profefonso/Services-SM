@@ -10,9 +10,6 @@ from spyne import ComplexModel
 from django.db import IntegrityError
 from spyne.model.fault import Fault
 from django.db.models.deletion import ProtectedError
-from multapp.utility.notification import SendMailNotifications
-
-from multapp.models.infraction import Infraction
 
 
 class InfractionComplex(ComplexModel):
