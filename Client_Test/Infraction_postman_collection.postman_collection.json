@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "147835e1-c0b6-4079-a41e-7db355e40c2c",
+		"name": "Infraction_postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Infraction_list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/infraction/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"infraction",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infraction_get_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/infraction/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"infraction",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infraction_add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2019-05-20T22:03:23Z\",\n    \"road_type\": \"AV\",\n    \"road_name\": \"AV Caracas\",\n    \"municipality\": 1,\n    \"location\": \"Centro de Bogota\",\n    \"plate\": \"RST432\",\n    \"infraction_code\": \"B67\",\n    \"vehicle_type\": \"Automovil\",\n    \"vehicle_service\": \"Particular\",\n    \"offender_type\": \"driver\",\n    \"offender_document_type\": \"CC\",\n    \"offender_document_id\": 123456789,\n    \"offender_name\": \"Alberto Posada\",\n    \"offender_license_id\": \"52136-9652\",\n    \"offender_address\": \"Cra 34 A No 56 - 8\",\n    \"offender_age\": 41,\n    \"offender_phone\": \"3114475236\",\n    \"offender_mail\": \"mail@domail.com\",\n    \"owner_document_type\": \"CC\",\n    \"owner_document_id\": 987654321,\n    \"owner_name\": \"Alberto Jaramillo\",\n    \"company_id\": \"8541326455\",\n    \"company_name\": \"Trasporte S.A\",\n    \"transit_agent_name\": \"Marcos Gonzalez\",\n    \"transit_agent_entity\": \"Policia Nacional\",\n    \"transit_agent_id\": 3423423,\n    \"transit_agent_observations\": \"Alta velocidad en via publica\",\n    \"document_url\": \"url\",\n    \"state\": \"active\",\n    \"state_date\": \"2019-05-20T22:03:23Z\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/infraction/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"infraction",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Infraction_update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"date_created\": \"2019-05-22\",\n    \"date\": \"2019-05-20T22:03:23Z\",\n    \"road_type\": \"AV\",\n    \"road_name\": \"AV Caracas\",\n    \"municipality\": 1,\n    \"location\": \"Centro de Bogota\",\n    \"plate\": \"RST432\",\n    \"infraction_code\": \"B67\",\n    \"vehicle_type\": \"Automovil\",\n    \"vehicle_service\": \"Particular\",\n    \"offender_type\": \"driver\",\n    \"offender_document_type\": \"CC\",\n    \"offender_document_id\": 123456789,\n    \"offender_name\": \"Alberto Posada\",\n    \"offender_license_id\": \"52136-9652\",\n    \"offender_address\": \"Cra 34 A No 56 - 8\",\n    \"offender_age\": 41,\n    \"offender_phone\": \"3114475236\",\n    \"offender_mail\": \"mail@domail.com\",\n    \"owner_document_type\": \"CC\",\n    \"owner_document_id\": 987654321,\n    \"owner_name\": \"Alberto Jaramillo\",\n    \"company_id\": \"8541326455\",\n    \"company_name\": \"Trasporte S.A\",\n    \"transit_agent_name\": \"Marcos Gonzalez\",\n    \"transit_agent_entity\": \"Policia Nacional\",\n    \"transit_agent_id\": 3423423,\n    \"transit_agent_observations\": \"Alta velocidad en via publica\",\n    \"document_url\": \"url\",\n    \"state\": \"active\",\n    \"state_date\": \"2019-05-20T22:03:23Z\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/infraction/4/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"infraction",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infraction_delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/infraction/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"infraction",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification_send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mail_list\": [\"mail@domain.com\", \"other_mail@domail.com\"],\r\n    \"subject\": \"Notification Fake\",\r\n    \"content_html\": \"<h1>Content Mail</h1>\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/notification/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"notification",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

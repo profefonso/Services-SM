@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="13c1f404-ad8a-47a5-8dff-35b73522e3b7" activeEnvironment="Default" name="SIMIT_Municipality" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="601e00e2-5766-4098-a26e-68ede94505e5" wsaVersion="NONE" name="Application" type="wsdl" bindingName="{django.soap.example}Application" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8000/soap/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8000/soap/?wsdl"><con:part><con:url>http://127.0.0.1:8000/soap/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="django.soap.example" name="Application" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:s0="multapp.views.soap" xmlns:soap11enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope" xmlns:tns="django.soap.example" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <wsdl:types>
+    <xs:schema targetNamespace="django.soap.example" elementFormDefault="qualified">
+      <xs:import namespace="multapp.views.soap"/>
+      <xs:complexType name="list_municipality"/>
+      <xs:complexType name="add_municipality">
+        <xs:sequence>
+          <xs:element name="municipality" type="s0:MunicipalityComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="add_municipalityResponse">
+        <xs:sequence>
+          <xs:element name="add_municipalityResult" type="s0:MunicipalityComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="delete_municipality">
+        <xs:sequence>
+          <xs:element name="id" type="xs:integer" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="delete_municipalityResponse">
+        <xs:sequence>
+          <xs:element name="delete_municipalityResult" type="xs:string" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="edit_municipality">
+        <xs:sequence>
+          <xs:element name="municipality" type="s0:MunicipalityComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="edit_municipalityResponse">
+        <xs:sequence>
+          <xs:element name="edit_municipalityResult" type="s0:MunicipalityComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="find_municipality">
+        <xs:sequence>
+          <xs:element name="id" type="xs:integer" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="find_municipalityResponse">
+        <xs:sequence>
+          <xs:element name="find_municipalityResult" type="s0:MunicipalityComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="suma">
+        <xs:sequence>
+          <xs:element name="a" type="xs:double" minOccurs="0" nillable="true"/>
+          <xs:element name="b" type="xs:double" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sumaResponse">
+        <xs:sequence>
+          <xs:element name="sumaResult" type="xs:double" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="list_municipalityResponse">
+        <xs:sequence>
+          <xs:element name="list_municipalityResult" type="s0:MunicipalityComplexArray" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="list_municipality" type="tns:list_municipality"/>
+      <xs:element name="add_municipality" type="tns:add_municipality"/>
+      <xs:element name="add_municipalityResponse" type="tns:add_municipalityResponse"/>
+      <xs:element name="delete_municipality" type="tns:delete_municipality"/>
+      <xs:element name="delete_municipalityResponse" type="tns:delete_municipalityResponse"/>
+      <xs:element name="edit_municipality" type="tns:edit_municipality"/>
+      <xs:element name="edit_municipalityResponse" type="tns:edit_municipalityResponse"/>
+      <xs:element name="find_municipality" type="tns:find_municipality"/>
+      <xs:element name="find_municipalityResponse" type="tns:find_municipalityResponse"/>
+      <xs:element name="suma" type="tns:suma"/>
+      <xs:element name="sumaResponse" type="tns:sumaResponse"/>
+      <xs:element name="list_municipalityResponse" type="tns:list_municipalityResponse"/>
+    </xs:schema>
+    <xs:schema targetNamespace="multapp.views.soap" elementFormDefault="qualified">
+      <xs:complexType name="MunicipalityComplex">
+        <xs:sequence>
+          <xs:element name="id" type="xs:integer" minOccurs="0" nillable="true"/>
+          <xs:element name="dian_code" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="name" type="xs:string" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MunicipalityComplexArray">
+        <xs:sequence>
+          <xs:element name="MunicipalityComplex" type="s0:MunicipalityComplex" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MunicipalityComplex" type="s0:MunicipalityComplex"/>
+      <xs:element name="MunicipalityComplexArray" type="s0:MunicipalityComplexArray"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="suma">
+    <wsdl:part name="suma" element="tns:suma"/>
+  </wsdl:message>
+  <wsdl:message name="sumaResponse">
+    <wsdl:part name="sumaResponse" element="tns:sumaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="list_municipality">
+    <wsdl:part name="list_municipality" element="tns:list_municipality"/>
+  </wsdl:message>
+  <wsdl:message name="list_municipalityResponse">
+    <wsdl:part name="list_municipalityResponse" element="tns:list_municipalityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="add_municipality">
+    <wsdl:part name="add_municipality" element="tns:add_municipality"/>
+  </wsdl:message>
+  <wsdl:message name="add_municipalityResponse">
+    <wsdl:part name="add_municipalityResponse" element="tns:add_municipalityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="edit_municipality">
+    <wsdl:part name="edit_municipality" element="tns:edit_municipality"/>
+  </wsdl:message>
+  <wsdl:message name="edit_municipalityResponse">
+    <wsdl:part name="edit_municipalityResponse" element="tns:edit_municipalityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="delete_municipality">
+    <wsdl:part name="delete_municipality" element="tns:delete_municipality"/>
+  </wsdl:message>
+  <wsdl:message name="delete_municipalityResponse">
+    <wsdl:part name="delete_municipalityResponse" element="tns:delete_municipalityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="find_municipality">
+    <wsdl:part name="find_municipality" element="tns:find_municipality"/>
+  </wsdl:message>
+  <wsdl:message name="find_municipalityResponse">
+    <wsdl:part name="find_municipalityResponse" element="tns:find_municipalityResponse"/>
+  </wsdl:message>
+  <wsdl:service name="SoapService">
+    <wsdl:port name="Application" binding="tns:Application">
+      <wsdlsoap11:address location="http://127.0.0.1:8000/soap/"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="Application">
+    <wsdl:operation name="suma" parameterOrder="suma">
+      <wsdl:input name="suma" message="tns:suma"/>
+      <wsdl:output name="sumaResponse" message="tns:sumaResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="list_municipality" parameterOrder="list_municipality">
+      <wsdl:input name="list_municipality" message="tns:list_municipality"/>
+      <wsdl:output name="list_municipalityResponse" message="tns:list_municipalityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="add_municipality" parameterOrder="add_municipality">
+      <wsdl:input name="add_municipality" message="tns:add_municipality"/>
+      <wsdl:output name="add_municipalityResponse" message="tns:add_municipalityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="edit_municipality" parameterOrder="edit_municipality">
+      <wsdl:input name="edit_municipality" message="tns:edit_municipality"/>
+      <wsdl:output name="edit_municipalityResponse" message="tns:edit_municipalityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete_municipality" parameterOrder="delete_municipality">
+      <wsdl:input name="delete_municipality" message="tns:delete_municipality"/>
+      <wsdl:output name="delete_municipalityResponse" message="tns:delete_municipalityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="find_municipality" parameterOrder="find_municipality">
+      <wsdl:input name="find_municipality" message="tns:find_municipality"/>
+      <wsdl:output name="find_municipalityResponse" message="tns:find_municipalityResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Application" type="tns:Application">
+    <wsdlsoap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="suma">
+      <wsdlsoap11:operation soapAction="suma" style="document"/>
+      <wsdl:input name="suma">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sumaResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="list_municipality">
+      <wsdlsoap11:operation soapAction="list_municipality" style="document"/>
+      <wsdl:input name="list_municipality">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="list_municipalityResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_municipality">
+      <wsdlsoap11:operation soapAction="add_municipality" style="document"/>
+      <wsdl:input name="add_municipality">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="add_municipalityResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="edit_municipality">
+      <wsdlsoap11:operation soapAction="edit_municipality" style="document"/>
+      <wsdl:input name="edit_municipality">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="edit_municipalityResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_municipality">
+      <wsdlsoap11:operation soapAction="delete_municipality" style="document"/>
+      <wsdl:input name="delete_municipality">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="delete_municipalityResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="find_municipality">
+      <wsdlsoap11:operation soapAction="find_municipality" style="document"/>
+      <wsdl:input name="find_municipality">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="find_municipalityResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint></con:endpoints><con:operation id="907575ac-75f8-43f6-a847-05403902c70c" isOneWay="false" action="add_municipality" name="add_municipality" bindingOperationName="add_municipality" type="Request-Response" outputName="add_municipalityResponse" inputName="add_municipality" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f8a2836d-4a63-44a5-bc05-a376a8396d3d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example" xmlns:mul="multapp.views.soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:add_municipality>\r
+         <!--Optional:-->\r
+         <djan:municipality>\r
+            <!--Optional:-->\r
+            <mul:id>?</mul:id>\r
+            <!--Optional:-->\r
+            <mul:dian_code>?</mul:dian_code>\r
+            <!--Optional:-->\r
+            <mul:name>?</mul:name>\r
+         </djan:municipality>\r
+      </djan:add_municipality>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add_municipality"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5f246c41-8575-43d2-858d-d81b501274e8" isOneWay="false" action="delete_municipality" name="delete_municipality" bindingOperationName="delete_municipality" type="Request-Response" outputName="delete_municipalityResponse" inputName="delete_municipality" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aaf18402-cf7d-42d9-b360-e5c4a08a6f1a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:delete_municipality>\r
+         <!--Optional:-->\r
+         <djan:id>?</djan:id>\r
+      </djan:delete_municipality>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="delete_municipality"/></con:call></con:operation><con:operation id="26e385c7-4972-40aa-bde5-e575fcdb1189" isOneWay="false" action="edit_municipality" name="edit_municipality" bindingOperationName="edit_municipality" type="Request-Response" outputName="edit_municipalityResponse" inputName="edit_municipality" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4efbedf6-2c95-4277-935a-0b32b01d6dec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example" xmlns:mul="multapp.views.soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:edit_municipality>\r
+         <!--Optional:-->\r
+         <djan:municipality>\r
+            <!--Optional:-->\r
+            <mul:id>?</mul:id>\r
+            <!--Optional:-->\r
+            <mul:dian_code>?</mul:dian_code>\r
+            <!--Optional:-->\r
+            <mul:name>?</mul:name>\r
+         </djan:municipality>\r
+      </djan:edit_municipality>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="edit_municipality"/></con:call></con:operation><con:operation id="adf5b989-ca21-43be-b1a9-125621af5fe7" isOneWay="false" action="find_municipality" name="find_municipality" bindingOperationName="find_municipality" type="Request-Response" outputName="find_municipalityResponse" inputName="find_municipality" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="21c1d438-b331-415d-af46-9c8249398104" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:find_municipality>\r
+         <!--Optional:-->\r
+         <djan:id>?</djan:id>\r
+      </djan:find_municipality>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="find_municipality"/></con:call></con:operation><con:operation id="2fd7822e-894b-4d41-be3d-8759ea61cfca" isOneWay="false" action="list_municipality" name="list_municipality" bindingOperationName="list_municipality" type="Request-Response" outputName="list_municipalityResponse" inputName="list_municipality" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4bb7a393-74b1-4d86-ba6d-335b2305a387" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:list_municipality/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="list_municipality"/></con:call></con:operation><con:operation id="96856f47-969c-471a-aee6-d09b93d25ce1" isOneWay="false" action="suma" name="suma" bindingOperationName="suma" type="Request-Response" outputName="sumaResponse" inputName="suma" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b406b06-fbe0-4f86-9088-dd4aab0e0c32" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/soap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:suma>\r
+         <!--Optional:-->\r
+         <djan:a>?</djan:a>\r
+         <!--Optional:-->\r
+         <djan:b>?</djan:b>\r
+      </djan:suma>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="suma"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

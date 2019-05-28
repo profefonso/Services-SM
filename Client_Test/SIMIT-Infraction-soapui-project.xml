@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3d38c4f5-f9b7-44ee-bfb3-f75abade791a" activeEnvironment="Default" name="SIMIT_Infraction" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="af8782f5-37ca-4b61-9e6f-5652346d2a7d" wsaVersion="NONE" name="Application" type="wsdl" bindingName="{django.soap.example}Application" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8000/infraction_management/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8000/infraction_management/?wsdl"><con:part><con:url>http://127.0.0.1:8000/infraction_management/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="django.soap.example" name="Application" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:s0="multapp.views.infraction_management_soap" xmlns:soap11enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope" xmlns:tns="django.soap.example" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <wsdl:types>
+    <xs:schema targetNamespace="django.soap.example" elementFormDefault="qualified">
+      <xs:import namespace="multapp.views.infraction_management_soap"/>
+      <xs:complexType name="infraction_list"/>
+      <xs:complexType name="add_infraction">
+        <xs:sequence>
+          <xs:element name="infraction" type="s0:InfractionComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="add_infractionResponse">
+        <xs:sequence>
+          <xs:element name="add_infractionResult" type="s0:InfractionComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="delete_infraction">
+        <xs:sequence>
+          <xs:element name="id" type="xs:integer" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="delete_infractionResponse">
+        <xs:sequence>
+          <xs:element name="delete_infractionResult" type="xs:string" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="edit_infraction">
+        <xs:sequence>
+          <xs:element name="infraction" type="s0:InfractionComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="edit_infractionResponse">
+        <xs:sequence>
+          <xs:element name="edit_infractionResult" type="s0:InfractionComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="find_infraction">
+        <xs:sequence>
+          <xs:element name="id" type="xs:integer" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="find_infractionResponse">
+        <xs:sequence>
+          <xs:element name="find_infractionResult" type="s0:InfractionComplex" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="infraction_listResponse">
+        <xs:sequence>
+          <xs:element name="infraction_listResult" type="s0:InfractionComplexArray" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="infraction_list" type="tns:infraction_list"/>
+      <xs:element name="add_infraction" type="tns:add_infraction"/>
+      <xs:element name="add_infractionResponse" type="tns:add_infractionResponse"/>
+      <xs:element name="delete_infraction" type="tns:delete_infraction"/>
+      <xs:element name="delete_infractionResponse" type="tns:delete_infractionResponse"/>
+      <xs:element name="edit_infraction" type="tns:edit_infraction"/>
+      <xs:element name="edit_infractionResponse" type="tns:edit_infractionResponse"/>
+      <xs:element name="find_infraction" type="tns:find_infraction"/>
+      <xs:element name="find_infractionResponse" type="tns:find_infractionResponse"/>
+      <xs:element name="infraction_listResponse" type="tns:infraction_listResponse"/>
+    </xs:schema>
+    <xs:schema targetNamespace="multapp.views.infraction_management_soap" elementFormDefault="qualified">
+      <xs:complexType name="InfractionComplex">
+        <xs:sequence>
+          <xs:element name="id" type="xs:integer" minOccurs="0" nillable="true"/>
+          <xs:element name="date" type="xs:dateTime" minOccurs="0" nillable="true"/>
+          <xs:element name="road_type" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="road_name" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="location" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="plate" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="infraction_code" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="vehicle_type" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="vehicle_service" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_type" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_document_type" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_document_id" type="xs:integer" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_name" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_license_id" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_address" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_age" type="xs:integer" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_phone" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="offender_mail" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="owner_document_type" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="owner_document_id" type="xs:integer" minOccurs="0" nillable="true"/>
+          <xs:element name="owner_name" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="company_id" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="company_name" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="transit_agent_name" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="transit_agent_entity" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="transit_agent_id" type="xs:integer" minOccurs="0" nillable="true"/>
+          <xs:element name="transit_agent_observations" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="document_url" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="state" type="xs:string" minOccurs="0" nillable="true"/>
+          <xs:element name="state_date" type="xs:date" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InfractionComplexArray">
+        <xs:sequence>
+          <xs:element name="InfractionComplex" type="s0:InfractionComplex" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InfractionComplex" type="s0:InfractionComplex"/>
+      <xs:element name="InfractionComplexArray" type="s0:InfractionComplexArray"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="infraction_list">
+    <wsdl:part name="infraction_list" element="tns:infraction_list"/>
+  </wsdl:message>
+  <wsdl:message name="infraction_listResponse">
+    <wsdl:part name="infraction_listResponse" element="tns:infraction_listResponse"/>
+  </wsdl:message>
+  <wsdl:message name="add_infraction">
+    <wsdl:part name="add_infraction" element="tns:add_infraction"/>
+  </wsdl:message>
+  <wsdl:message name="add_infractionResponse">
+    <wsdl:part name="add_infractionResponse" element="tns:add_infractionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="edit_infraction">
+    <wsdl:part name="edit_infraction" element="tns:edit_infraction"/>
+  </wsdl:message>
+  <wsdl:message name="edit_infractionResponse">
+    <wsdl:part name="edit_infractionResponse" element="tns:edit_infractionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="delete_infraction">
+    <wsdl:part name="delete_infraction" element="tns:delete_infraction"/>
+  </wsdl:message>
+  <wsdl:message name="delete_infractionResponse">
+    <wsdl:part name="delete_infractionResponse" element="tns:delete_infractionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="find_infraction">
+    <wsdl:part name="find_infraction" element="tns:find_infraction"/>
+  </wsdl:message>
+  <wsdl:message name="find_infractionResponse">
+    <wsdl:part name="find_infractionResponse" element="tns:find_infractionResponse"/>
+  </wsdl:message>
+  <wsdl:service name="InfractionManagementService">
+    <wsdl:port name="Application" binding="tns:Application">
+      <wsdlsoap11:address location="http://127.0.0.1:8000/infraction_management/"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:portType name="Application">
+    <wsdl:operation name="infraction_list" parameterOrder="infraction_list">
+      <wsdl:input name="infraction_list" message="tns:infraction_list"/>
+      <wsdl:output name="infraction_listResponse" message="tns:infraction_listResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="add_infraction" parameterOrder="add_infraction">
+      <wsdl:input name="add_infraction" message="tns:add_infraction"/>
+      <wsdl:output name="add_infractionResponse" message="tns:add_infractionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="edit_infraction" parameterOrder="edit_infraction">
+      <wsdl:input name="edit_infraction" message="tns:edit_infraction"/>
+      <wsdl:output name="edit_infractionResponse" message="tns:edit_infractionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="delete_infraction" parameterOrder="delete_infraction">
+      <wsdl:input name="delete_infraction" message="tns:delete_infraction"/>
+      <wsdl:output name="delete_infractionResponse" message="tns:delete_infractionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="find_infraction" parameterOrder="find_infraction">
+      <wsdl:input name="find_infraction" message="tns:find_infraction"/>
+      <wsdl:output name="find_infractionResponse" message="tns:find_infractionResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Application" type="tns:Application">
+    <wsdlsoap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="infraction_list">
+      <wsdlsoap11:operation soapAction="infraction_list" style="document"/>
+      <wsdl:input name="infraction_list">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="infraction_listResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_infraction">
+      <wsdlsoap11:operation soapAction="add_infraction" style="document"/>
+      <wsdl:input name="add_infraction">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="add_infractionResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="edit_infraction">
+      <wsdlsoap11:operation soapAction="edit_infraction" style="document"/>
+      <wsdl:input name="edit_infraction">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="edit_infractionResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_infraction">
+      <wsdlsoap11:operation soapAction="delete_infraction" style="document"/>
+      <wsdl:input name="delete_infraction">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="delete_infractionResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="find_infraction">
+      <wsdlsoap11:operation soapAction="find_infraction" style="document"/>
+      <wsdl:input name="find_infraction">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="find_infractionResponse">
+        <wsdlsoap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8000/infraction_management/</con:endpoint></con:endpoints><con:operation id="d4efd1bf-abab-4a4c-986c-295690250fe2" isOneWay="false" action="add_infraction" name="add_infraction" bindingOperationName="add_infraction" type="Request-Response" outputName="add_infractionResponse" inputName="add_infraction" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="45a237a7-2e4a-45e5-af5b-60a221431e46" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/infraction_management/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example" xmlns:mul="multapp.views.infraction_management_soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:add_infraction>\r
+         <!--Optional:-->\r
+         <djan:infraction>\r
+            <!--Optional:-->\r
+            <mul:date>2019-05-22T22:03:23+00:00</mul:date>\r
+            <!--Optional:-->\r
+            <mul:road_type>AV</mul:road_type>\r
+            <!--Optional:-->\r
+            <mul:road_name>CALLE FALSA 123</mul:road_name>\r
+            <!--Optional:-->\r
+            <mul:location>En la ciudad</mul:location>\r
+            <!--Optional:-->\r
+            <mul:plate>AAA000</mul:plate>\r
+            <!--Optional:-->\r
+            <mul:infraction_code>A11</mul:infraction_code>\r
+            <!--Optional:-->\r
+            <mul:vehicle_type>Automovil</mul:vehicle_type>\r
+            <!--Optional:-->\r
+            <mul:vehicle_service>Particular</mul:vehicle_service>\r
+            <!--Optional:-->\r
+            <mul:offender_type>Driver</mul:offender_type>\r
+            <!--Optional:-->\r
+            <mul:offender_document_type>CC</mul:offender_document_type>\r
+            <!--Optional:-->\r
+            <mul:offender_document_id>9517531</mul:offender_document_id>\r
+            <!--Optional:-->\r
+            <mul:offender_name>Adriana Barrera</mul:offender_name>\r
+            <!--Optional:-->\r
+            <mul:offender_license_id>123789951</mul:offender_license_id>\r
+            <!--Optional:-->\r
+            <mul:offender_address>Cra 42 A No 45</mul:offender_address>\r
+            <!--Optional:-->\r
+            <mul:offender_age>64</mul:offender_age>\r
+            <!--Optional:-->\r
+            <mul:offender_phone>315996332</mul:offender_phone>\r
+            <!--Optional:-->\r
+            <mul:offender_mail>mail@userdomain.com</mul:offender_mail>\r
+            <!--Optional:-->\r
+            <mul:owner_document_type>CC</mul:owner_document_type>\r
+            <!--Optional:-->\r
+            <mul:owner_document_id>9632113</mul:owner_document_id>\r
+            <!--Optional:-->\r
+            <mul:owner_name>Julio Florez</mul:owner_name>\r
+            <!--Optional:-->\r
+            <mul:company_id>123321123</mul:company_id>\r
+            <!--Optional:-->\r
+            <mul:company_name>RENAULT</mul:company_name>\r
+            <!--Optional:-->\r
+            <mul:transit_agent_name>POSADA VICTOR</mul:transit_agent_name>\r
+            <!--Optional:-->\r
+            <mul:transit_agent_entity>POLICIA DE CARRETERAS</mul:transit_agent_entity>\r
+            <!--Optional:-->\r
+            <mul:transit_agent_id>999111545</mul:transit_agent_id>\r
+            <!--Optional:-->\r
+            <mul:transit_agent_observations>Multa por ir muy rapido en via publica</mul:transit_agent_observations>\r
+            <!--Optional:-->\r
+            <mul:document_url>url</mul:document_url>\r
+            <!--Optional:-->\r
+            <mul:state>active</mul:state>\r
+            <!--Optional:-->\r
+            <mul:state_date>2019-05-22</mul:state_date>\r
+         </djan:infraction>\r
+      </djan:add_infraction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add_infraction"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8479d962-59c8-49ef-a9a5-4882b8f4cabf" isOneWay="false" action="delete_infraction" name="delete_infraction" bindingOperationName="delete_infraction" type="Request-Response" outputName="delete_infractionResponse" inputName="delete_infraction" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9e1eb557-2d59-48a7-9fd8-2da354ab1a79" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/infraction_management/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:delete_infraction>\r
+         <!--Optional:-->\r
+         <djan:id>?</djan:id>\r
+      </djan:delete_infraction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="delete_infraction"/></con:call></con:operation><con:operation id="57f8efe7-5446-478a-b056-d4ffb3392862" isOneWay="false" action="edit_infraction" name="edit_infraction" bindingOperationName="edit_infraction" type="Request-Response" outputName="edit_infractionResponse" inputName="edit_infraction" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="43f847b6-3d9a-40a5-ad76-e454de8b080a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/infraction_management/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example" xmlns:mul="multapp.views.infraction_management_soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:edit_infraction>\r
+         <!--Optional:-->\r
+         <djan:infraction>\r
+             <!--Optional:-->
+            <mul:id>1</mul:id>
+            <!--Optional:-->
+            <mul:date>2019-05-22T22:03:23+00:00</mul:date>
+            <!--Optional:-->
+            <mul:road_type>AV</mul:road_type>
+            <!--Optional:-->
+            <mul:road_name>CALLE FALSA 123</mul:road_name>
+            <!--Optional:-->
+            <mul:location>En la ciudad</mul:location>
+            <!--Optional:-->
+            <mul:plate>AAA000</mul:plate>
+            <!--Optional:-->
+            <mul:infraction_code>A11</mul:infraction_code>
+            <!--Optional:-->
+            <mul:vehicle_type>Automovil</mul:vehicle_type>
+            <!--Optional:-->
+            <mul:vehicle_service>Particular</mul:vehicle_service>
+            <!--Optional:-->
+            <mul:offender_type>Driver</mul:offender_type>
+            <!--Optional:-->
+            <mul:offender_document_type>CC</mul:offender_document_type>
+            <!--Optional:-->
+            <mul:offender_document_id>9517531</mul:offender_document_id>
+            <!--Optional:-->
+            <mul:offender_name>Adriana Barrera</mul:offender_name>
+            <!--Optional:-->
+            <mul:offender_license_id>123789951</mul:offender_license_id>
+            <!--Optional:-->
+            <mul:offender_address>Cra 42 A No 45</mul:offender_address>
+            <!--Optional:-->
+            <mul:offender_age>64</mul:offender_age>
+            <!--Optional:-->
+            <mul:offender_phone>315996332</mul:offender_phone>
+            <!--Optional:-->
+            <mul:offender_mail>mail@userdomain.com</mul:offender_mail>
+            <!--Optional:-->
+            <mul:owner_document_type>CC</mul:owner_document_type>
+            <!--Optional:-->
+            <mul:owner_document_id>9632113</mul:owner_document_id>
+            <!--Optional:-->
+            <mul:owner_name>Julio Florez</mul:owner_name>
+            <!--Optional:-->
+            <mul:company_id>123321123</mul:company_id>
+            <!--Optional:-->
+            <mul:company_name>RENAULT</mul:company_name>
+            <!--Optional:-->
+            <mul:transit_agent_name>POSADA VICTOR</mul:transit_agent_name>
+            <!--Optional:-->
+            <mul:transit_agent_entity>POLICIA DE CARRETERAS</mul:transit_agent_entity>
+            <!--Optional:-->
+            <mul:transit_agent_id>999111545</mul:transit_agent_id>
+            <!--Optional:-->
+            <mul:transit_agent_observations>Multa por ir muy rapido en via publica</mul:transit_agent_observations>
+            <!--Optional:-->
+            <mul:document_url>url</mul:document_url>
+            <!--Optional:-->
+            <mul:state>active</mul:state>
+            <!--Optional:-->
+            <mul:state_date>2019-05-22</mul:state_date>
+         </djan:infraction>\r
+      </djan:edit_infraction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="edit_infraction"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9809d259-2879-4c0a-b37d-d285411518af" isOneWay="false" action="find_infraction" name="find_infraction" bindingOperationName="find_infraction" type="Request-Response" outputName="find_infractionResponse" inputName="find_infraction" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6c279274-9792-4c12-800c-5f00fc91bbf2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/infraction_management/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:find_infraction>\r
+         <!--Optional:-->\r
+         <djan:id>1</djan:id>\r
+      </djan:find_infraction>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="find_infraction"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6600ae10-f3ab-433f-a80b-49b634b9f863" isOneWay="false" action="infraction_list" name="infraction_list" bindingOperationName="infraction_list" type="Request-Response" outputName="infraction_listResponse" inputName="infraction_list" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="306531c3-9119-41fd-b41e-96f58e94b8b2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8000/infraction_management/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:djan="django.soap.example">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <djan:infraction_list/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="infraction_list"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
