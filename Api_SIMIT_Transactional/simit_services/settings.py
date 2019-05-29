@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'simit_services.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'mercadigital'),
+        'USER': os.environ.get('DB_USER', 'mercadigital'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'DskJFQdVRn77j5A'),
+        'HOST': os.environ.get('DB_HOST', 'mercadigitaldb.csdfmar0dedf.us-east-2.rds.amazonaws.com'),
+        'PORT': os.environ.get('DB_PORT', 5432)
     }
 }
 

@@ -4,19 +4,13 @@ services:
     build: API_SIMIT_Transactional/
     ports:
       - "8000:8000"
-    volumes:
-      - .:/code
   query:
     build: API_SIMIT_Query/
     ports:
       - "8001:8001"
-    volumes:
-      - .:/code
   mail:
     build: API_SIMIT_Mail/
     ports:
       - "8002:8002"
-    volumes:
-      - .:/code
   redis:
     image: "redis:alpine"
