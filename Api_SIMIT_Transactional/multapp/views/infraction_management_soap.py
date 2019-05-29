@@ -11,6 +11,7 @@ from django.db import IntegrityError
 from spyne.model.fault import Fault
 from django.db.models.deletion import ProtectedError
 from multapp.utility.send_notification import Sendmail
+from multapp.models.infraction import Infraction
 
 
 class InfractionComplex(ComplexModel):
@@ -92,6 +93,7 @@ class InfractionManagementService(ServiceBase):
             inf = Infraction.objects.create(**data)
             sendmailnotification = Sendmail()
             sendmailnotification.send_mail(
+                mail_list=[data['offender_mail']],
                 subject='Multa de Transito - Simit Services',
                 template='infraction_mail',
                 offender_name=str(inf.offender_name),
