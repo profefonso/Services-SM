@@ -12,5 +12,14 @@ services:
     build: API_SIMIT_Mail/
     ports:
       - "8002:8002"
+
+  celery:
+    restart: always
+    build: ./django
+    links:
+      - redis:redis
+    env_file: .env
+    command: ./run_celery.sh
+
   redis:
     image: "redis:alpine"
