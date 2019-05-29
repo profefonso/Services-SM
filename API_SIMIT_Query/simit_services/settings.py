@@ -25,7 +25,7 @@ SECRET_KEY = '(f(i3x^3n&az)_#n3ued$pv5lscl%^2hobr#mr&wcd+07g*nt@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mail', '*', 'javegio.mw.columbuscdn.com', '201.226.152.89']
 CORS_ORIGIN_ALLOW_ALL = True
 
 
