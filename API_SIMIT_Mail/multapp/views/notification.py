@@ -21,30 +21,37 @@ class NotificationServicesRest(APIView):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
-        ''' message = '<h2>Multa de Transito N0: ' + str(numquote) + \
-                  '</h2></br><p>Estimado proveedor se ha creado una nueva cotizacion para el cliente ' + client_name + \
-                  '</p></br><p>Ingrese a la plataforma o cree su Oferta a traves de los servicios disponibles</p>' + \
-                  '<br><h3>MERCA DIGITAL SA</h3>'
-                  
-                  
-            subject =  'Multa de Transito - Simit Services'
+        ''' 
+        {
+            "mail_list": ["user@domain.com", "user_two@domain2.com"],
+            "subject": "Notification Fake",
+            "template": "infraction_mail",
+            "content_data": {
+                "offender_name":"Gonzalito",
+                "infraction_id": "34",
+                "date":"12-12-12",
+                "location":"Bogota"
+            }
+        }
         '''
 
-        if 'mail_list' in body and 'subject' in body and 'content_html' in body:
+        if 'mail_list' in body and 'subject' in body and 'template' in body and 'content_data' in body:
 
             try:
                 sendmailnotification = SendMailNotifications()
                 sendmailnotification.send_mail(
                     list_emails=body['mail_list'],
                     subject=body['subject'],
-                    content_xml=body['content_html']
+                    template=body['template'],
+                    content_data=body['content_data']
                 )
 
                 return Response(
-                        {'data': {'mail': 'OK'}},
-                        status=status.HTTP_200_OK
-                    )
-            except:
+                    {'data': {'mail': 'OK'}},
+                    status=status.HTTP_200_OK
+                )
+            except Exception as e:
+                print(e)
                 return Response(
                     {'data': {'error': 'Message Don´t Send'}},
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR

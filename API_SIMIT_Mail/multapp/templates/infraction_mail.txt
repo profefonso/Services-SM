@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail</title>
+</head>
+<body>
+<h3>Notificación para {{ offender_name }}</h3>
+<p>Se ha registrano la multa de transito numero {{ infraction_id }}</p>
+<h4>Fecha y hora: {{ date }}</h4>
+<h4>Ubicación: {{ location }}</h4>
+<br>
+<p>Pague a tiempo su comparendo para evitar futuras sanciones y realizar tramites de transito</p>
+<h3>SIMIT - Services</h3>
+</body>
+</html>
