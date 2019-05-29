@@ -1,4 +1,4 @@
-from API_SIMIT_Mail.simit_services.celery import app
+from simit_services.celery import app
 
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
