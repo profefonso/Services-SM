@@ -9,13 +9,6 @@ from multapp.utility.notification import SendMailNotifications
 class NotificationServicesRest(APIView):
     name = 'notification_service'
 
-    '''
-        {
-            "mail_list": ["mail@domain.com", "other_mail@domail.com"],
-            "subject": "Notification Fake",
-            "content_html": "<h1>Content Mail</h1>"
-        }
-    '''
 
     def post(self, request, **kwargs):
         body_unicode = request.body.decode('utf-8')

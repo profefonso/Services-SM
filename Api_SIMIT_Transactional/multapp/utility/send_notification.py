@@ -1,11 +1,12 @@
 import requests
+import json
 
 
 class Sendmail:
 
     @staticmethod
     def send_mail(mail_list=[], subject='', template='', offender_name='', infraction_id='', date='', location=''):
-        url = 'http://0.0.0.0:8002/notification/'
+        url = 'http://mail:8002/notification/'
         data = {
             "mail_list": mail_list,
             "subject": subject,
@@ -17,7 +18,9 @@ class Sendmail:
                 "location": location
             }
         }
-        r = requests.post(url, data=data)
+
+        data_send = json.dumps(data, ensure_ascii=False)
+        r = requests.post(url, data=data_send)
         result = r.json()
         print(result)
         if result['data']['mail'] == 'OK':
