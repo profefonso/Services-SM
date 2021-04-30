@@ -17,7 +17,7 @@ simplejson==3.16.0
 spyne==2.13.2a0
 sqlparse==0.3.0
 uritemplate==3.0.0
-urllib3==1.25.2
+urllib3==1.25.8
 lxml==4.3.3
 psycopg2==2.8.2
 psycopg2-binary==2.8.2
