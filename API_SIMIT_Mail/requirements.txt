@@ -17,6 +17,6 @@ simplejson==3.16.0
 spyne==2.13.2a0
 sqlparse==0.3.0
 uritemplate==3.0.0
-urllib3==1.25.2
+urllib3==1.26.5
 celery
 redis
