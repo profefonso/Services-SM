@@ -18,6 +18,6 @@ spyne==2.13.2a0
 sqlparse==0.3.0
 uritemplate==3.0.0
 urllib3==1.25.2
-lxml==4.3.3
+lxml==4.9.1
 psycopg2==2.8.2
 psycopg2-binary==2.8.2
